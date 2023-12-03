@@ -1,16 +1,13 @@
-echo off
+@echo off
 
 echo Instalando chocolatey...
-START /WAIT /B PowerShell "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+START /WAIT PowerShell "If(Get-Command -Name choco.exe -ErrorAction SilentlyContinue) { exit; } Else { Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) }"
 
 echo Instalando NodeJS...
-START /WAIT /B PowerShell "choco install nodejs.install"
+START /WAIT PowerShell "choco upgrade nodejs.install"
 
 echo Instalando Git...
-START /WAIT /B PowerShell "choco install git.install"
-
-echo Atualizando NodeJS...
-START /WAIT /B PowerShell "choco upgrade nodejs.install"
+START /WAIT PowerShell "choco upgrade git.install"
 
 echo Implantando Servidor...
 cd C:\Users\
