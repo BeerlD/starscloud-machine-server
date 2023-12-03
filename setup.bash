@@ -1,4 +1,4 @@
-@echo off
+echo off
 
 echo Instalando chocolatey...
 START /WAIT PowerShell "If(Get-Command -Name choco.exe -ErrorAction SilentlyContinue) { exit; } Else { Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) }"
@@ -17,5 +17,5 @@ echo Liberando porta de acesso...
 netsh advfirewall firewall add rule name="ApiReleaseSushinePin" dir=in action=allow protocol=TCP localport=5055
 
 echo Iniciando servidor...
-START /B CMD "cd C:\Users\starscloud-machine-server\ && node server.js"
-echo Máquina Configurada com Sucesso.
+START /B PowerShell "cd C:\Users\starscloud-machine-server\; node server.js;"
+echo Maquina Configurada com Sucesso.
