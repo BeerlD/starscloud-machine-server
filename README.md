@@ -1,4 +1,4 @@
 Run this command:
 ```bash
-cd C:/ && git clone https://github.com/BeerlD/starscloud-machine-server.git && cd starscloud-machine-server && bash setup.bash
+wget https://raw.githubusercontent.com/BeerlD/starscloud-machine-server/master/setup.bash | bash
 ```
