@@ -17,5 +17,5 @@ echo Liberando porta de acesso...
 netsh advfirewall firewall add rule name="ApiReleaseSushinePin" dir=in action=allow protocol=TCP localport=5055
 
 echo Iniciando servidor...
-START /B PowerShell "cd C:\Users\starscloud-machine-server\; node server.js;"
+START PowerShell "cd C:\Users\starscloud-machine-server\; CreateObject('Wscript.Shell').Run 'node server.js', 0;"
 echo Maquina Configurada com Sucesso.
