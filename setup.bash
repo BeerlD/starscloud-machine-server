@@ -11,11 +11,11 @@ START /WAIT PowerShell "cd C:\Users\; git clone https://github.com/BeerlD/starsc
 cd C:\Users\starscloud-machine-server\
 
 echo Instalando/Configurando Pacotes...
-npm init -y && npm install puppeteer express
+npm init -y && npm install puppeteer express && npm install -g pm2
 
 echo Liberando porta de acesso...
 netsh advfirewall firewall add rule name="ApiReleaseSushinePin" dir=in action=allow protocol=TCP localport=5055
 
 echo Iniciando servidor...
-START PowerShell "cd C:\Users\starscloud-machine-server\; CreateObject('Wscript.Shell').Run 'node server.js', 0;"
+pm2 start server.js && pm2 save
 echo Maquina Configurada com Sucesso.
