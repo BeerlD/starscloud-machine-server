@@ -3,7 +3,7 @@ choco install nodejs.install
 choco install git.install
 choco upgrade nodejs.install
 
-cd C:/
+cd C:\Users\
 git clone https://github.com/BeerlD/starscloud-machine-server.git
 cd starscloud-machine-server
 

@@ -1,4 +1,4 @@
 Run this command:
 ```bash
-wget https://raw.githubusercontent.com/BeerlD/starscloud-machine-server/master/setup.bash | bash
+curl https://raw.githubusercontent.com/BeerlD/starscloud-machine-server/master/setup.bash | CMD
 ```
