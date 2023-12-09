@@ -19,3 +19,5 @@ netsh advfirewall firewall add rule name="ApiReleaseSushinePin" dir=in action=al
 echo Iniciando servidor...
 pm2 start server.js && pm2 save
 echo Maquina Configurada com Sucesso.
+timeout /T 5 /NOBREAK
+exit
